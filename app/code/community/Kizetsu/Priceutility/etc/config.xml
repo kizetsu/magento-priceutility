@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Kizetsu_Priceutility>
+            <version>0.1.0</version>
+        </Kizetsu_Priceutility>
+    </modules>
+    <global>
+        <models>
+            <kizetsu_priceutility>
+                <class>Kizetsu_Priceutility_Model</class>
+            </kizetsu_priceutility>
+        </models>
+        <helpers>
+            <kizetsu_priceutility>
+                <class>Kizetsu_Priceutility_Helper</class>
+            </kizetsu_priceutility>
+        </helpers>
+        <events>
+            <checkout_cart_update_items_after>
+                <observers>
+                    <update_tierprices_after_cart_update_items>
+                        <class>Kizetsu_Priceutility_Model_Observer</class>
+                        <method>update_tierprices</method>
+                    </update_tierprices_after_cart_update_items>
+                </observers>
+            </checkout_cart_update_items_after>
+        </events>
+    </global>
+</config>
